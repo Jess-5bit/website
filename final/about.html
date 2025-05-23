@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Preload fonts to improve performance and reduce layout shift (Mimani, 2018) -->
+        <link rel="preload" href="/fonts/Press_Start_2P/PressStart2P-Regular.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/fonts/Roboto_Mono/RobotoMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title> About</title> 
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>          
+        <!-- The site header which consists of the logo and navigation bar-->
+        <header class="site-header">
+            <!-- Main website logo-->
+            <img class="logo" src="images/logo.webp" width="1250" height="604" alt="logo">
+            <!-- The navigation bar on top of every page -->
+            <nav id="nav-container"></nav>
+        </header>
+
+        <!-- The container which holds the main content -->
+        <div class="main-container">
+            <main class="main-left">
+                <h1>ABOUT</h1>
+                <p>Hi! My name is Jessica and I am currently in my second year in a Bachelors of Computer Science/Maths at UQ. My hobbies are playing games and the occasional coding, so it just made sense to make this website!</p>
+                <br>
+                <p> If you’d like to contact me for any feedback or enquires click on my email below! </p>
+
+                <!-- A button that navigate to another page -->
+                <nav class="buttons">
+                    <button class="email-btn"> 
+                        EMAIL 
+                        <img class="symbol" src="images/email.webp" width="130" height="100" alt="Email Symbol"> 
+                    </button>
+                </nav>
+            </main>
+        <!-- Personal photo -->
+        <img class="myphoto" src="images/Me.webp" alt="Photo of me">        
+        </div>
+
+
+    <script src="js/gameData.js"></script>
+    <script src = "js/script.js"></script>
+    </body>
+</html>

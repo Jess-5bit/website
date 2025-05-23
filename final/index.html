@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Preload fonts to improve performance and reduce layout shift (Mimani, 2018) -->
+        <link rel="preload" href="/fonts/Press_Start_2P/PressStart2P-Regular.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/fonts/Roboto_Mono/RobotoMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title> RetroRewind</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <!-- The site header which consists of the logo and navigation bar-->
+        <header class="site-header">
+            <!-- Main website logo-->
+            <img class="logo" src="images/logo.webp" width="1250" height="604" alt="logo">
+            <!-- The navigation bar on top of every page -->
+            <nav id="nav-container"></nav>
+        </header>
+
+        <!-- The container which contains the welcome message, navigation buttons and the side logo -->
+        <div class="main-container">
+            <main class="main-left">
+                <h1 class="welcome-heading">WELCOME TO</h1>
+                <p>retro vibes</p>
+                <p>modern play</p>
+                <p>endless fun </p>
+                <br>
+                <p>Feeling nostalgic?</p>
+                <p>No problem!</p>
+                <br>
+                <p>Play open sourced retro style games here</p>
+                <p>on Retro Rewind!</p>
+
+                 <!-- A group of buttons that are used to navigate to other web pages-->
+                <nav class="buttons">
+                    <button type="button" id="game-btn"> 
+                        GAMES
+                        <img class="symbol" src="images/gamesymbol.webp" width="112" height="115" alt="Game Symbol"> 
+                    </button>
+                    <button type="button" class="email-btn"> 
+                        EMAIL 
+                        <img class="symbol" src="images/email.webp" width="130" height="100" alt="Email Symbol"> 
+                    </button>
+                </nav>
+            </main>
+            <img class="sidelogo" src="images/logo.webp" alt="logo">        
+        </div>
+
+
+    <script src="js/gameData.js"> </script>
+    <script src="js/script.js"> </script>
+    </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Preload fonts to improve performance and reduce layout shift (Mimani, 2018) -->
+        <link rel="preload" href="/fonts/Press_Start_2P/PressStart2P-Regular.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/fonts/Roboto_Mono/RobotoMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title> Games Menu</title>       
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>          
+        <!-- The site header which consists of the logo and navigation bar-->
+        <header class="site-header">
+            <!-- Main website logo-->
+            <img class="logo" src="images/logo.webp" width="1250" height="604" alt="logo">
+            
+            <!-- The navigation bar on top of every page -->
+            <nav id="nav-container"></nav>
+        </header>
+
+        <!-- The container which holds the title and genre buttons-->
+        <div class="main-container">
+            <main id="main-centre">
+                <h1>GAMES MENU</h1>
+                 <!-- The container which holds the genre buttons-->
+                <div class="genre-section"> 
+                    <nav class="genre-buttons">
+                        <button type="button" class ="classic-btn">
+                            CLASSIC
+                            <img class="symbol" src="images/classic.webp" width="167" height="159" alt="Classic Symbol"> 
+                        </button>
+                        <button type="button" class="action-btn"> 
+                            ACTION 
+                            <img class="symbol" src="images/action.webp" width="90" height="150" alt="Action Symbol"> 
+                        </button>
+                        <button type="button" class="adventure-btn"> 
+                            ADVENTURE 
+                            <img class="symbol" src="images/adventure.webp" width="182" height="206" alt="Puzzle Symbol"> 
+                        </button>
+                        <button type="button" class="strategy-btn"> 
+                            STRATEGY 
+                            <img class="symbol" src="images/strategy.webp" width="148" height="157" alt="strategy Symbol">
+                        </button>
+                        <button type="button" class="all-btn"> 
+                            ALL GAMES 
+                        </button>
+                    </nav>
+                </div>
+            </main>
+        </div>
+    <script src="js/gameData.js"></script>        
+    <script src="js/script.js"></script>
+    </body>    
+</html>

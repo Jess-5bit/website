@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Preload fonts to improve performance and reduce layout shift (Mimani, 2018) -->
+        <link rel="preload" href="/fonts/Press_Start_2P/PressStart2P-Regular.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/fonts/Roboto_Mono/RobotoMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title> Genre</title>         
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <!-- The site header which consists of the logo and navigation bar-->
+        <header class="site-header">
+            <!-- Main website logo-->
+            <img class="logo" src="images/logo.webp" width="1250" height="604" alt="logo">
+            <!-- The navigation bar on top of every page -->
+            <nav id="nav-container"></nav>
+        </header>
+
+        <!-- The container which contains the title -->
+        <div id="genre-title"></div>
+        <!-- The container which contains all game items-->
+        <div id="game-grid"></div>       
+    <script src="js/gameData.js"></script>
+    <script src="js/script.js"></script>
+    </body>
+</html>

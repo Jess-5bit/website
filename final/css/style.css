@@ -1,0 +1,590 @@
+/* Define the custom fonts which are hosted to improve performance */
+@font-face {
+  font-family: 'Press Start 2P';
+  src: url('/fonts/Press_Start_2P/PressStart2P-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Roboto Mono';
+  src: url('/fonts/Roboto_Mono/RobotoMono-Regular.woff2') format('woff2');
+}
+
+/* Define custom colors and fonts */
+:root { 
+    --bg-colour: #201F1F;
+    --heading-font: 'Press Start 2P', 'Courier New', monospace;
+    --body-font: 'Roboto Mono', 'Courier New', monospace;
+    --body-colour: #FFFFFF;
+    --neon-colour: #FE259B;
+}
+
+/* Reset margins and padding of all elements */
+* {
+    margin: 0;
+    padding: 0;
+}
+/* General elements restyling */
+h1 {
+    font-family: var(--heading-font);
+    font-size: 1.5em;
+    color: var(--body-colour);
+    font-weight: lighter;
+    text-decoration: underline;
+    padding-bottom: 1em;
+
+    text-shadow:
+    /* White undershadow of text */
+    0 2px 4px rgba(0, 0, 0, 0.3), 
+    0 4px 6px rgba(0, 0, 0, 0.2), 
+    0 6px 5px #FFFFFF;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    font-family: var(--body-font);
+    color: var(--body-colour);
+}
+
+body {
+    background-color: var(--bg-colour);
+}
+
+li {
+    list-style-type: none;
+}
+
+.welcome-heading {
+    text-decoration: none;
+}
+
+/* Scales the logo responsively */
+.logo {
+    width: min(60vw,250px);
+    height: auto;
+}
+
+/* Layout of the site header which consists of the logo and the navigation bar */ 
+.site-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Makes the nav span full width within header */ 
+.site-header > nav {
+  width: 100%;
+}
+
+/* Defualt he*/
+#nav-container {
+    min-height: 250px;
+}
+
+/* Navigation bar layout and spacing */
+.navigation-bar  {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    font-family: var(--body-font);
+
+}
+/* Styles the navigation items of the navigation bar */
+.nav-link, #game-dropdown  { 
+    display: inline-block;
+    padding-top: 0.3em;
+    font-size: 2em;
+    color: var(--body-colour);
+
+    -webkit-text-stroke: 0.5px var(--neon-colour); /* Neon outline */
+
+   /* Text decoration and shadow (O'Dwyer, 2021)*/ 
+    text-shadow:     
+    /* Pink glow around the text */
+    0 0 3px #FD83FF,
+    0 0 5px #FD83FF,
+    0 0 20px #ee3bf1,
+
+    /* Pink shadow under letters */
+    0 2px 4px rgba(0, 0, 0, 0.3), 
+    0 4px 6px rgba(0, 0, 0, 0.2), 
+    0 6px 10px #ee3bf1;
+}
+/* Styles the game button that triggers a drop down */
+#game-dropdown {
+    font-family: inherit;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+/** Set relative positioning for underline effect*/
+.nav-link, #game-dropdown {
+  position: relative;
+}
+
+/* The underline of the navigation items (Chalaris, 2024) */
+.nav-link::after,
+#game-dropdown::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0); /* Start from center */
+  transform-origin: center; /* Scale outwards from center */
+  width: 100%;
+  height: 2px;
+  background-color: #FD83FF;
+  transition: transform 0.4s ease;
+}
+
+/* Animate underline effect of the navigation items on hover */
+.nav-link:hover::after,
+#game-dropdown:hover::after,
+.dropdown:hover #game-dropdown::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+/* Hide these dropdown for mobile */
+.dropdown-content {
+    display: none;
+}
+
+.dropdown-arrow {
+    display: none;
+}
+
+/* Layout of containers */
+.main-container, #credits-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;  
+    align-items: center;   
+}
+
+/* Styling of main content */
+#main-centre, .main-left {
+    padding-bottom: 2em;
+}
+
+/* Leaves a gap between sides of the screen */
+.main-left {
+    width: 80%;
+}
+
+/* Hide the side logo on mobile */
+.sidelogo {
+    display: none;
+}
+
+/* Button group layout */
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 2em;
+
+}
+
+/* Button stylin */
+.buttons button, .genre-buttons button {
+    font-family: var(--body-font);
+    color: var(--body-colour);
+    padding: 0.5em;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    border: 2px solid #FFFFFF;
+    background-color: transparent;
+    transition: background-color 0.8s ease, color 0.3s ease; /* Transition for hover effect */
+}
+
+/* Button styling when hovered on */
+.buttons button:hover,
+.genre-buttons button:hover {
+    background-color: #a8a5a5; 
+    border: 3px solid #383838;
+    color: #383838;
+}
+
+/* Styling of the symbols inside buttons */
+.symbol {
+    /* Scales the symbol so it's 5vw but doesnt exceed 20px */
+    width: min(5vw, 20px);
+    height: min(5vw,20px);
+}
+
+/* Styling of personal photo on about page */
+.myphoto {
+    width: 40vw;
+    margin-bottom: 3em;
+    border: 2px solid #FFFFFF;
+    border-radius: 2em;
+}
+
+/* Styling of genre buttons container */
+.genre-section {
+    padding: 3em 1em;
+    border: solid #FFFFFF;
+    border-radius: 2em;
+}
+
+/* Layout of genre buttons */
+.genre-buttons  {
+    /* Grid design with 2 columns */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 1em;
+}
+
+/* Centres the last genre button */
+.genre-buttons button:last-child {
+    grid-column: 1 / -1; 
+    justify-self: center; 
+}
+
+#genre-title {
+    text-align: center;
+    font-size: 0.9em;
+}
+
+/* Layout of the game genre page */
+#game-grid {
+    /* Grid design with two columns */
+    display: grid;
+    grid-template-columns: repeat(2, auto); 
+    justify-content: center;                
+    gap: 6em;
+    width: 100%;
+    padding-top: 2em;
+    padding-bottom: 1em;
+    box-sizing: border-box;
+}
+
+/* Styling of the photo of a game */
+.game-photo {
+    position: relative; 
+    display: inline-block; 
+
+    /* Game photo size*/
+    width: 10em;
+    height: 10em;
+
+    /* Cover the whole box and centre */ 
+    background-size: 100% 100%;
+    background-position: center;
+    border: 3px solid #FFFFFF;
+    background-color: #444;
+
+    transition: box-shadow 0.5s ease-in-out; /* Animation for glowing box hover effect */
+}
+
+/* Hover effect on the game photo  */
+.game-photo:hover {
+    box-shadow:
+    /* White glow around the game box */
+    0 0 3px #FFFFFF,
+    0 0 5px #FFFFFF,
+    0 0 20px #FFFFFF,
+    0 2px 4px rgba(0, 0, 0, 0.3), 
+    0 4px 6px rgba(0, 0, 0, 0.2), 
+    0 6px 10px #FFFFFF;
+}
+
+/* Layout of a game item which consists of the photo and title */
+.game-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Initially hidden game information overlay that appear when a game photo is hovered over */
+.game-info {
+    font-size: 0.6em;
+    opacity: 0;
+    transition: opacity 0.5s ease-in; /* Animation for the hover effect of the opacity of the game info */
+    padding: 1em; /* Leaves space on sides of box */
+}
+
+/* Game info class that gets added when hovered on to show game info overlay */
+.game-info.visible {
+    opacity: 1;
+}
+
+/* Styling the title of a game */
+.game-title {
+    padding-top: 0.5em;
+    font-size: 0.8em;
+    text-align: center;
+
+}
+
+/* The logo present on the game page */
+#gamesscreenlogo {
+    width: 100%;
+    height: auto;
+    margin-top: -2em;
+
+}
+
+/* The arcade screen where the selected game is displayed */
+#arcade-screen {
+    border: solid 2px #FFFFFF;
+    width: 85vw;
+    height: 60vh;
+    background-color: black;
+    border-radius: 2em;
+    position: relative;
+
+    /* The arcade screen glow */
+    box-shadow:
+    /** White glow */
+    0 0 3px #FFFFFF,
+    0 0 5px #FFFFFF,
+    0 0 20px #FFFFFF,
+    0 2px 4px rgba(0, 0, 0, 0.3), 
+    0 4px 6px rgba(0, 0, 0, 0.2), 
+    0 6px 10px #FFFFFF;
+}
+
+/* Layout for the container of the game screen */
+#gamescreen-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* The styling of the iframe game */
+.game {
+    border-radius: 2em;
+
+    /* Take up the whole screen */
+    width: 100%;
+    height:100%;
+}
+
+/* Styling for the heading of controls */
+.controls-heading {
+    font-family: var(--heading-font);
+    font-size: 1.5em;
+    color: var(--body-colour);
+    padding-top: 1.4em;
+    padding-bottom: 0.5em;
+    text-decoration: underline;
+}
+
+/* Styling of the controls and credits */
+.controls, #credits-section {
+    font-size: 0.9em;
+    padding-bottom: 2em;
+}
+
+/* Styling for genre headings on a credits page */
+.genre-headings {
+    font-family: var(--heading-font);
+    color: var(--body-colour);
+    padding: 1em 0;
+}
+
+/* Media query for larger desktop devices */
+@media  (min-width: 1000px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    .logo {
+        width: 17vw;
+        border: 3px solid #FFFFFF;
+        margin: 2% 2% 1% 2%;
+    }
+
+    /* Change the orientations to row */
+    .site-header {
+        flex-direction: row;
+    }
+
+    #nav-container {
+        min-height: 150px;
+    }
+
+    .navigation-bar{
+        flex-direction: row;
+    }
+
+    .nav-link, #game-dropdown{ 
+        font-size: 2.5em;
+        -webkit-text-stroke: 1px var(--neon-colour);
+    }
+
+    /* Anchors dropdown and mantains inline layout */
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    /* Initially hidden dropdown menu with animation */
+   .dropdown-content {
+        opacity: 0;
+        /* Animation for expanding dropdown (W3Schools, n.d) */
+        transform: translateY(-10px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+
+        pointer-events: none;
+        display: block; 
+        position: absolute;
+        background-color: #4d4d4d;
+        font-size: 0.8em;
+        min-width: 12vw;
+        z-index: 1;  /* Appears on top of other elements */
+    }
+    
+    /* Show drop down on hover */
+    .dropdown:hover .dropdown-content, .dropdown-content:hover  {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+
+    /* Styling for dropdown navgation links */
+    .dropdown-content a {
+        font-family: var(--heading-font);
+        color: var(--body-colour);
+        display: block;
+        padding: 1.1em 2em; 
+        border: solid 0.8px black;
+        float: none;
+
+    }
+
+    /* Change colour of dropdown navigation links on hover */
+    .dropdown-content a:hover {
+        background-color: #7a7a7a;
+    }
+
+    /* Show the drop down arrow for larger devices */
+    .dropdown-arrow {
+        display: inline-block;
+    }
+
+    /* Change button group layout */
+    .buttons { 
+        justify-content: flex-start; 
+        gap: 10em;
+    }
+
+    .buttons button {
+        font-size: 0.9em;
+        border: 3px solid #FFFFFF;
+
+    }
+
+    .symbol {
+        width: min(4vw, 30px);
+        height: min(4vw,30px);
+    }
+
+    /* Displays the side logo */
+    .sidelogo {
+        max-width: 50%;
+        display: block;
+    }
+    
+    /* Change orientation of the main container to row */
+    .main-container {
+        flex-direction: row; 
+    }
+
+    /* Common styling for main-centre and main-left */
+    #main-centre, .main-left {
+        padding-bottom: 0;
+        font-size: 1.7em;
+    }
+
+    /* Aligns main content centre */
+    #main-centre {
+        padding-top: 2em;
+        text-align: center;
+    }
+
+    /* Aligns main content to the left */
+    .main-left {
+        padding-top: 3em;
+        padding-left: 1.5em;
+        text-align: left;
+    }
+
+    .myphoto {
+        max-width: 20vw;
+        border-radius: 4em;
+        border: 4px solid #FFFFFF;
+        margin: 6em 10em 0em 10em;
+        align-self: center;
+    }
+
+    .genre-section {
+        padding: 2em 7em;
+    }
+
+    /* Styles the genre buttons seperately to be bigger */
+    .genre-buttons button {
+        padding: 0.6em;
+        font-size: 1.3em;
+        border: 3px solid #FFFFFF;
+    }
+    .genre-buttons .symbol {
+        width: min(5vw, 40px);
+        height: min(5vw,40px);
+    }
+
+    #genre-title {
+        padding-top: 2em;
+        font-size: 1.5em;
+    }
+
+    /* Changes layout of genre games page so there are 3 columns */
+    #game-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(18em, 25em)); 
+        gap: 6em;
+    }
+
+    /* Increase game photo size */
+    .game-photo {
+        width: 14em;
+        height: 14em;
+    }
+
+    .game-info {
+        font-size: 0.8em;
+    }
+
+    .game-title {
+        font-size: 1em;
+    }
+
+    #gamesscreenlogo {
+        width: 40vw;
+        height: auto;
+    }
+
+    #arcade-screen {
+        height: 54vh;
+        width: 58vw;
+    }
+    
+    .controls {
+        padding-bottom: 0;
+    }
+
+    #credits-container {
+        font-size: 1.5em;
+    }
+}
+        
+    
+

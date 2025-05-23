@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Preload fonts to improve performance and reduce layout shift (Mimani, 2018) -->
+        <link rel="preload" href="/fonts/Press_Start_2P/PressStart2P-Regular.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="/fonts/Roboto_Mono/RobotoMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title> Game </title>           
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>          
+        <!-- The site header which consists of the logo and navigation bar-->
+        <header class="site-header">
+             <!-- The navigation bar on top of every page -->
+            <nav id="nav-container"></nav>
+        </header>
+         <!-- The container which contains the website logo, game screen and game controls-->
+        <main id="gamescreen-container">
+            <img id="gamesscreenlogo" src="images/gamescreenlogo.webp" width="1305" height="246" alt="logo">
+            <div id = "arcade-screen"> </div>
+            <section id="game-controls"> 
+                <h2 class="controls-heading">CONTROLS</h2>
+            </section>       
+        </main>
+    <script src="js/gameData.js"></script>
+    <script src="js/script.js"></script>
+    </body>
+</html>
+
+  
