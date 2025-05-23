@@ -213,9 +213,8 @@ li {
 
 /* Styling of the symbols inside buttons */
 .symbol {
-    /* Scales the symbol so it's 5vw but doesnt exceed 20px */
-    width: min(5vw, 20px);
-    height: min(5vw,20px);
+   width: 1.5em;
+  height: auto;
 }
 
 /* Styling of personal photo on about page */
@@ -483,11 +482,6 @@ li {
 
     }
 
-    .symbol {
-        width: min(4vw, 30px);
-        height: min(4vw,30px);
-    }
-
     /* Displays the side logo */
     .sidelogo {
         max-width: 50%;
@@ -537,8 +531,8 @@ li {
         border: 3px solid #FFFFFF;
     }
     .genre-buttons .symbol {
-        width: min(5vw, 40px);
-        height: min(5vw,40px);
+        width: 40px;
+        height: 40px;
     }
 
     #genre-title {
